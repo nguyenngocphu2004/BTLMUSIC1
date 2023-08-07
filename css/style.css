@@ -23,9 +23,9 @@ body {
 
 .search:hover,
 .search:hover .search-btn,
-ul.v-user > li > a:hover,
-.setting-user > div:hover > button,
-ul.menu > li:hover {
+ul.v-user>li>a:hover,
+.setting-user>div:hover>button,
+ul.menu>li:hover {
     background-color: var(--violet);
     text-shadow: 3px 3px 5px var(--blackblue);
     color: var(--whitenew);
@@ -33,17 +33,19 @@ ul.menu > li:hover {
     transition: text-shadow 0.25s, background-color 0.7s, color 0.5s;
 }
 
-ul.menu > li:hover > a,
-ul.menu > li:hover > button,
-#next:hover, #prev:hover,
-.container > ul > li:hover > h2,
-.container > ul > li > div > a:hover {
+ul.menu>li:hover>a,
+ul.menu>li:hover>button,
+#next:hover,
+#prev:hover,
+.container>ul>li:hover>h2,
+.container>ul>li>div>a:hover {
     color: var(--whitenew);
     transition: color 0.5s;
 }
 
 
 /*Start header */
+
 header {
     border-bottom: 2px solid var(--blueviolet);
 }
@@ -69,7 +71,10 @@ header {
     cursor: pointer;
     border-radius: 50%;
 }
+
+
 /* Start search */
+
 .search {
     border-radius: 20rem;
     background-color: var(--blueviolet);
@@ -98,13 +103,17 @@ header {
     width: 30rem;
 }
 
-.btn > i {
+.btn>i {
     background-color: transparent;
 }
+
+
 /* End Search */
 
+
 /*Start setting user */
-.setting-user > div {
+
+.setting-user>div {
     margin-right: 2rem;
 }
 
@@ -113,7 +122,6 @@ header {
     position: absolute;
     box-shadow: 0px 3px 8px var(--blueviolet);
 }
-
 
 ul.v-user {
     right: 0;
@@ -132,17 +140,17 @@ ul.v-user:after {
     right: 25%;
 }
 
-ul.v-user > li {
+ul.v-user>li {
     list-style-type: none;
     border-bottom: 1px solid var(--blackblue);
     background: transparent;
 }
 
-ul.v-user > li:last-child {
+ul.v-user>li:last-child {
     border-bottom: none;
 }
 
-ul.v-user > li > button {
+ul.v-user>li>button {
     width: 100%;
     text-decoration: none;
     color: var(--white);
@@ -152,27 +160,35 @@ ul.v-user > li > button {
     font-size: 1.2rem;
 }
 
-ul.v-user > li:first-child > button {
+ul.v-user>li:first-child>button {
     border-radius: 0.8rem 0.8rem 0 0;
 }
 
-ul.v-user > li:last-child > button {
+ul.v-user>li:last-child>button {
     border-radius: 0 0 0.8rem 0.8rem;
 }
 
+
 /* End setting user */
-ul.header > li {
+
+ul.header>li {
     list-style-type: none;
 }
+
+
 /* End Header */
 
 
 /* Start Main */
+
 .right {
     width: 85%;
     margin: 0 3rem;
 }
+
+
 /* Start nav*/
+
 .left {
     width: 15%;
     border-right: 2px solid var(--blueviolet);
@@ -188,20 +204,22 @@ ul.header > li {
     align-items: center;
 }
 
-ul.menu > li > a {
+ul.menu>li>a {
     text-decoration: none;
     display: block;
     padding: 1.2rem;
     color: var(--white);
 }
 
-ul.menu > li > button {
+ul.menu>li>button {
     margin-left: 2rem;
     display: block;
     background-color: transparent;
-}  
+}
+
 
 /* End Main */
+
 .slider {
     position: relative;
     height: 30vh;
@@ -217,12 +235,13 @@ ul.menu > li > button {
     width: 25%;
 }
 
-.item > img {
+.item>img {
     width: 100%;
     border-radius: 1rem;
 }
 
-#next, #prev {
+#next,
+#prev {
     position: absolute;
     top: 40%;
     color: var(--white);
@@ -239,22 +258,24 @@ ul.menu > li > button {
     right: 50px;
 }
 
+
 /* Star artists */
+
 .container {
     height: 40vh;
     overflow: hidden;
 }
 
-.container > ul {
+.container>ul {
     list-style-type: none;
 }
 
-.container > ul > li > h2 {
+.container>ul>li>h2 {
     display: block;
     color: var(--white);
 }
 
-.container > ul > li > div > a {
+.container>ul>li>div>a {
     display: block;
     text-decoration: none;
     color: var(--white);
@@ -262,38 +283,38 @@ ul.menu > li > button {
     padding: 0.5rem;
 }
 
-.container > ul.header-container > li > div > a {
+.container>ul.header-container>li>div>a {
     display: none;
     padding: 0;
 }
 
 @keyframes leftToRight {
     from {
-      transform: translateX(-50%);
+        transform: translateX(-50%);
     }
     to {
-      transform: translateX(0);
+        transform: translateX(0);
     }
 }
 
-.container:hover > ul.header-container > li > div > a {
+.container:hover>ul.header-container>li>div>a {
     display: block;
     animation: leftToRight 1s forwards;
 }
 
-.container > ul.v-container {
+.container>ul.v-container {
     flex-wrap: wrap;
 }
 
-.container > ul.v-container > li {
+.container>ul.v-container>li {
     width: 20%;
 }
 
-.container > ul.v-container > li > div {
+.container>ul.v-container>li>div {
     padding: 1rem;
 }
 
-.container > ul.v-container > li > div > div {
+.container>ul.v-container>li>div>div {
     position: relative;
     overflow: hidden;
     border-radius: 1rem;
@@ -302,12 +323,12 @@ ul.menu > li > button {
     padding-bottom: 100%;
 }
 
-.container > ul.v-container > li > div > div > a > img {
+.container>ul.v-container>li>div>div>a>img {
     width: 100%;
     transition: opacity 0.5s;
 }
 
-.container > ul.v-container > li > div > div > a > i {
+.container>ul.v-container>li>div>div>a>i {
     border: 1px solid var(--whitenew);
     padding: 0.7rem;
     border-radius: 50%;
@@ -319,86 +340,100 @@ ul.menu > li > button {
     color: var(--whitenew);
 }
 
-.container > ul.v-container > li > div > div:hover > a > i {
+.container>ul.v-container>li>div>div:hover>a>i {
     display: block;
 }
 
-.container > ul.v-container > li > div > div:hover > a > img {
+.container>ul.v-container>li>div>div:hover>a>img {
     transform: scale(1.3);
     transition: transform 1s;
     opacity: 0.6;
 }
+
+
 /* End artists */
-.modal{
-    position:fixed;
-    top:0;
+
+.modal {
+    position: fixed;
+    top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     display: none;
 }
-.modal-fly{
-    background: rgb(0,0,0,0.4);
+
+.modal-fly {
+    background: rgb(0, 0, 0, 0.4);
 }
-.modal-body{
-    margin:  auto;
+
+.modal-body {
+    margin: auto;
     border-radius: 5px;
     background-color: var(--blueviolet);
-    color:#ffffff;
+    color: #ffffff;
     position: relative;
 }
-.auto-form{
+
+.auto-form {
     padding: 0 32px;
     width: 600px;
     animation: modalFaceIn ease 0.5s;
 }
-.auto-form-header{
+
+.auto-form-header {
     margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.auto-form-heading{
+
+.auto-form-heading {
     font-size: 2.2rem;
     font-weight: 400px;
 }
-.auto-form-switch-btn{
+
+.auto-form-switch-btn {
     font-size: 1.6rem;
     cursor: pointer;
 }
 
-.auth-form-input{
+.auth-form-input {
     width: 100%;
     margin-top: 16px;
     height: 40px;
     padding: 0 12px;
-    font-size:14px;
+    font-size: 14px;
     border-radius: 2px;
     border: 1px solid #888;
 }
-.auth-form-input:focus{
+
+.auth-form-input:focus {
     border-color: #888;
 }
-.auto-form-aside{
+
+.auto-form-aside {
     margin-top: 18px;
 }
-.auto-form-p{
+
+.auto-form-p {
     font-size: 14px;
     line-height: 18px;
     text-align: center;
     padding: 0 12px;
 }
-.auto-form-p1{
+
+.auto-form-p1 {
     text-decoration: none;
-    color:#888;
+    color: #888;
 }
-.auto-form-controls{
+
+.auto-form-controls {
     margin-top: 80px;
     display: flex;
     justify-content: flex-end;
-
 }
-.btn123{
+
+.btn123 {
     min-width: 142px;
     height: 36px;
     text-decoration: none;
@@ -408,51 +443,65 @@ ul.menu > li > button {
     padding: 0;
     cursor: pointer;
 }
-.auto-form-controls-back{
+
+.auto-form-controls-back {
     margin-right: 8px;
 }
-.auto-form-{
+
+.auto-form- {
     padding: 12px 36px;
     display: flex;
     justify-content: space-between;
 }
-.iconsocial{
+
+.iconsocial {
     font-size: 18px;
 }
-.bth--{
+
+.bth-- {
     line-height: 36px;
     border-radius: 3px;
     color: #ffffff;
 }
-.modal.open{
+
+.modal.open {
     display: flex;
 }
-.auth-form_help{
+
+.auth-form_help {
     display: flex;
     justify-content: flex-end;
 }
-.auto-form_help-link{
+
+.auto-form_help-link {
     font-size: 14px;
     text-decoration: none;
     color: #ffffff;
 }
-.auto-form_help-link-1{
+
+.auto-form_help-link-1 {
     display: block;
     border-left: 1px solid #888;
     margin: 0 16px;
     height: 22px;
 }
-@keyframes modalFaceIn{
-    from{
+
+@keyframes modalFaceIn {
+    from {
         transform: translateY(-100px);
         opacity: 0;
     }
-    to{
+    to {
         transform: translateY(0px);
         opacity: 1;
     }
 }
 
+.auto-form-header-log {
+    text-align: center;
+    margin-top: 20px;
+}
 
-
-
+.controls {
+    margin-bottom: 10px;
+}
