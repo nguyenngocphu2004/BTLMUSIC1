@@ -180,14 +180,6 @@ exit1.addEventListener('click',function (event){
   event.preventDefault();
   hideLog1();
 });
-modal.addEventListener('click',function (event){
-  event.preventDefault();
-  hideLog();
-})
-modal1.addEventListener('click',function (event){
-  event.preventDefault();
-  hideLog1();
-})
 function validate(e){
   if(e.value==="")
       {
