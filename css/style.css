@@ -143,6 +143,7 @@ ul.v-user > li:last-child {
 }
 
 ul.v-user > li > button {
+    width: 100%;
     text-decoration: none;
     color: var(--white);
     display: block;
