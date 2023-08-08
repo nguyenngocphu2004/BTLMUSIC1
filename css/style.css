@@ -1,7 +1,7 @@
 :root {
     --blackblue: #0c031a;
-    --whitenew: #ffffff;
-    --white: #d5cece;
+    --white: #ffffff;
+    --whitenew: #d5cece;
     --blueviolet: #2a144d;
     --violet: #4f327c;
 }
@@ -48,6 +48,24 @@ ul.menu>li:hover>button,
 
 header {
     border-bottom: 2px solid var(--blueviolet);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background-color: var(--blackblue);
+}
+
+main {
+    margin-top: 5.25rem;
+    margin-left: 15%;
+}
+
+.left {
+    position: fixed;
+    top: 5.25rem;
+    left: 0;
+    bottom: 0;
 }
 
 .header {
@@ -150,8 +168,7 @@ ul.v-user>li:last-child {
     border-bottom: none;
 }
 
-ul.v-user>li>button {
-    width: 100%;
+ul.v-user>li>a {
     text-decoration: none;
     color: var(--white);
     display: block;
@@ -160,11 +177,11 @@ ul.v-user>li>button {
     font-size: 1.2rem;
 }
 
-ul.v-user>li:first-child>button {
+ul.v-user>li:first-child>a {
     border-radius: 0.8rem 0.8rem 0 0;
 }
 
-ul.v-user>li:last-child>button {
+ul.v-user>li:last-child>a {
     border-radius: 0 0 0.8rem 0.8rem;
 }
 
@@ -182,7 +199,6 @@ ul.header>li {
 /* Start Main */
 
 .right {
-    width: 85%;
     margin: 0 3rem;
 }
 
@@ -202,6 +218,11 @@ ul.header>li {
 
 .nav {
     align-items: center;
+}
+
+.focus {
+    background-color: var(--blueviolet);
+    border-left: 4px solid var(--violet);
 }
 
 ul.menu>li>a {
@@ -353,24 +374,24 @@ ul.menu>li>button {
 
 /* End artists */
 
+
+/* Star Form */
+
 .modal {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    z-index: 1;
     display: none;
-}
-
-.modal-fly {
-    background: rgb(0, 0, 0, 0.4);
 }
 
 .modal-body {
     margin: auto;
     border-radius: 5px;
     background-color: var(--blueviolet);
-    color: #ffffff;
+    color: var(--whitenew);
     position: relative;
 }
 
@@ -428,6 +449,7 @@ ul.menu>li>button {
 }
 
 .auto-form-controls {
+    padding-right: 1rem;
     margin-top: 80px;
     display: flex;
     justify-content: flex-end;
@@ -461,7 +483,7 @@ ul.menu>li>button {
 .bth-- {
     line-height: 36px;
     border-radius: 3px;
-    color: #ffffff;
+    color: var(--whitenew);
 }
 
 .modal.open {
@@ -476,7 +498,7 @@ ul.menu>li>button {
 .auto-form_help-link {
     font-size: 14px;
     text-decoration: none;
-    color: #ffffff;
+    color: var(--whitenew);
 }
 
 .auto-form_help-link-1 {
@@ -504,4 +526,20 @@ ul.menu>li>button {
 
 .controls {
     margin-bottom: 10px;
+}
+
+
+/* End form */
+
+
+/* Change Color*/
+
+.color-default {
+    background-color: var(--blackblue);
+    color: var(--white);
+}
+
+.color-change {
+    background-color: var(--white);
+    color: var(--blackblue);
 }

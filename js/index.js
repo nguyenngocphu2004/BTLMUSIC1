@@ -1,9 +1,36 @@
 let btnUser = document.getElementById("btn-user");
 let vUser = document.getElementById("v-user");
+let setting = document.getElementById("setting");
+let setting_button = document.getElementById("setting-button");
 let items = document.querySelectorAll(".slider .item");
 let next = document.getElementById("next");
 let prev = document.getElementById("prev");
 let active = 0;
+
+
+
+function loadFeatureds() {
+    fetch("assests/data/featureds.json").then(res => res.json()).then(data => {
+        let featuredsList = document.getElementById("featured");
+        let featuredsHtml = "";
+        for (let featured of data) {
+            featuredsHtml += `
+          <li>
+            <div>
+              <div>
+                <a href="">
+                  <img src="${featured.image}" alt="">
+                  <i class="fa-solid fa-play"></i>
+                </a>    
+              </div>
+              <a href="">${featured.name}</a>
+            </div>
+          </li>
+        `;
+        }
+        featuredsList.innerHTML = featuredsHtml;
+    })
+}
 
 function loadArtists() {
     fetch("assests/data/artists.json").then(res => res.json()).then(data => {
@@ -81,7 +108,7 @@ function clickFull(btnE, e) {
         userClicking = true;
     });
     document.addEventListener("click", function(event) {
-        if (event.target === vUser || event.target === btnUser)
+        if (event.target === vUser || event.target === btnUser || event.target === setting || event.target === setting_button)
             return;
         else {
             vUser.style.display = "none";
@@ -116,10 +143,12 @@ function loadShow() {
 
 
 window.onload = function() {
+    loadFeatureds();
     loadArtists();
     loadCategorys();
     /* Click user */
     clickFull(btnUser, vUser);
+    clickFull(setting_button, setting);
     /* Slider animation */
     loadShow();
     next.onclick = function() {
@@ -148,7 +177,21 @@ window.onload = function() {
     //   autoSlideTimer = setInterval(autoSlideShow, autoSlideInterval);
     // });
 
-};
+
+    /* Focus */
+    let menuFocus = document.querySelectorAll(".menu li, .menu a, .menu button");
+    menuFocus.forEach((e) => {
+        e.addEventListener("click", (event) => {
+            menuFocus.forEach((el) => el.classList.remove("focus"));
+            e.classList.add("focus");
+        });
+    });
+    /* End focus */
+    /* Thay doi mau nen*/
+}
+
+
+/* Form */
 let register = document.querySelector('.js-register')
 let modal = document.querySelector('.js-modal')
 let modal1 = document.querySelector('.js-modal1')
@@ -298,3 +341,20 @@ function dangnhap() {
         return;
     }
 }
+
+// function changeColor() {
+//     let fullBody = document.getElementById("fullBody")
+//     if (fullBody.classList.contains("color-change")) {
+//         fullBody.classList.remove("color-change")
+//         fullBody.classList.add("color-default")
+//     } else {
+//         fullBody.classList.remove("color-default")
+//         fullBody.classList.add("color-change")
+//     }
+// }
+let Colorchange = document.getElementById("change-color")
+let body = document.body
+Colorchange.addEventListener("click", function() {
+    body.classList.toggle("color-change")
+    body.classList.toggle("color-default")
+})
