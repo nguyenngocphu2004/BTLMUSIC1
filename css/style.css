@@ -166,7 +166,17 @@ ul.v-user:after {
     right: 25%;
 }
 
-ul.v-user>li {
+ul.v-user-setting:after {
+    content: "";
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent var(--blueviolet) transparent;
+    position: absolute;
+    top: -19px;
+    right: 50%;
+}
+
+.v-user>li {
     list-style-type: none;
     border-bottom: 1px solid var(--blackblue);
     background: transparent;
