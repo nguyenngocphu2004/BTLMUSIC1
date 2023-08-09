@@ -112,6 +112,7 @@ function clickFull(btnE, e) {
             return;
         else {
             vUser.style.display = "none";
+            setting.style.display = "none";
             userClicked = false;
         }
     });
