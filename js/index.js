@@ -366,3 +366,23 @@ exit_intro.addEventListener('click', function(event) {
     event.preventDefault();
     hideLogIntro();
 });
+// Phan hoi cua nguoi nghe
+let send = document.getElementById("send")
+let exit_send = document.querySelector(".exit10")
+let modal_send = document.querySelector(".js-modal-send")
+send.addEventListener('click', function(event) {
+    event.preventDefault();
+    showLogSend();
+});
+
+function showLogSend() {
+    modal_send.classList.add('open')
+}
+
+function hideLogSend() {
+    modal_send.classList.remove('open')
+}
+exit_send.addEventListener('click', function(event) {
+    event.preventDefault();
+    hideLogSend();
+});

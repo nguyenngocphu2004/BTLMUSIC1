@@ -556,7 +556,65 @@ ul.menu>li>button {
 .auto-form-p1 {
     font-size: 16px;
     line-height: 20px;
-    text-align: center;
     padding: 0 12px;
     margin-top: 10px;
+}
+
+.footer-1 {
+    flex: 1.5;
+    margin: auto;
+    text-align: center;
+}
+
+.footers {
+    border-top: 2px solid var(--blueviolet);
+    display: flex;
+    position: relative;
+    color: var(--whitenew);
+    padding: 20px;
+    font-size: 20px;
+    line-height: 25px;
+}
+
+.footer-2 {
+    flex: 1;
+    margin-left: 15px;
+}
+
+.footer-2>p {
+    margin-top: 10px;
+}
+
+.footer-2 p:last-child {
+    margin-bottom: 10px;
+}
+
+.footer-3 {
+    flex: 1;
+    margin-left: 15px;
+}
+
+.border-l {
+    border-right: 2px solid var(--blueviolet);
+}
+
+.footer-3>input,
+.send {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.icon-footer {
+    font-size: 25px;
+    margin-right: 10px;
+}
+
+.linkedin1 {
+    color: var(--whitenew);
+    text-decoration: none;
+}
+
+.auto-form-header-contact {
+    text-align: center;
+    margin-top: 40px;
 }
