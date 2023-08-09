@@ -341,20 +341,28 @@ function dangnhap() {
         return;
     }
 }
+// Change - color
+let btn = document.getElementsByClassName(".btn")
+document.getElementById("change-color").addEventListener("click", function(event) {
+    event.preventDefault();
+    document.documentElement.classList.toggle("root1");
+});
+let intro = document.getElementById("introduce")
+let modal_intro = document.querySelector(".js-modal-intro")
 
-// function changeColor() {
-//     let fullBody = document.getElementById("fullBody")
-//     if (fullBody.classList.contains("color-change")) {
-//         fullBody.classList.remove("color-change")
-//         fullBody.classList.add("color-default")
-//     } else {
-//         fullBody.classList.remove("color-default")
-//         fullBody.classList.add("color-change")
-//     }
-// }
-let Colorchange = document.getElementById("change-color")
-let body = document.body
-Colorchange.addEventListener("click", function() {
-    body.classList.toggle("color-change")
-    body.classList.toggle("color-default")
-})
+function showLogIntro() {
+    modal_intro.classList.add('open')
+}
+
+function hideLogIntro() {
+    modal_intro.classList.remove('open')
+}
+let exit_intro = document.querySelector(".exit6")
+intro.addEventListener('click', function(event) {
+    event.preventDefault();
+    showLogIntro();
+});
+exit_intro.addEventListener('click', function(event) {
+    event.preventDefault();
+    hideLogIntro();
+});

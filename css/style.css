@@ -6,6 +6,14 @@
     --violet: #4f327c;
 }
 
+:root.root1 {
+    --blackblue: #fff;
+    --white: black;
+    --whitenew: #1f1d1d;
+    --blueviolet: #dccaca;
+    --violet: #9e8e8e;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -532,14 +540,15 @@ ul.menu>li>button {
 /* End form */
 
 
-/* Change Color*/
+/* Gioi thieu */
 
-.color-default {
-    background-color: var(--blackblue);
-    color: var(--white);
+.logo-introduce {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
 }
 
-.color-change {
-    background-color: var(--white);
-    color: var(--blackblue);
+.auto-form-controls-back1 {
+    margin: auto;
 }
