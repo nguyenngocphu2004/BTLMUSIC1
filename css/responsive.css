@@ -1,0 +1,33 @@
+@media (min-width:1024px) {
+    .menu-icon {
+        display: none;
+    }
+}
+
+@media (min-width:740px)and(max-width:1023px) {}
+
+@media (max-width:740px) {
+    .menu {
+        background-color: blue;
+    }
+    .logo {
+        width: 4rem;
+        margin: 0 8rem;
+    }
+    .left {
+        border-right: none;
+    }
+    .right {
+        margin-left: -3rem;
+    }
+    .menu-icon {
+        position: relative;
+        left: -18rem;
+    }
+    .setting-user>div {
+        margin-right: 10rem;
+    }
+    html {
+        max-width: 100%;
+    }
+}

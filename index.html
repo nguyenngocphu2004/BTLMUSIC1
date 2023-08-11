@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 </head>
@@ -14,12 +15,15 @@
     <header>
         <div class="header flex">
             <div><img class="logo" src="./assests/img/taoanhdep_mega_logo_8619-removebg-preview.png" alt=""></div>
+            <div class="menu-icon">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </div>
             <form class="flex header search">
                 <button class="search-btn btn"><i class="fa-solid fa-magnifying-glass"></i></button>
                 <input class="search-text" type="text" placeholder="Tìm kiếm bài hát...">
             </form>
             <form class="flex header setting-user">
-                <div><button type="button" class="btn"><i class="fa-solid fa-bell"></i></button></div>
+                <!-- <div><button type="button" class="btn"><i class="fa-solid fa-bell"></i></button></div> -->
                 <div><button type="button" class="btn" id="setting-button"><i class="fa-solid fa-gear"></i></button>
                     <ul class="v-user v-user-setting" id="setting">
                         <li>
@@ -155,6 +159,28 @@
                         </div>
                     </li>
                 </ul>
+            </div>
+            <div class="footers">
+                <div class="footer-l">
+                    <p>Viết phản hồi</p>
+                    <input type="text " placeholder="Nhập vào đây... " class="input-">
+                    <button id="send" class="input-">Gửi</button>
+                </div>
+                <div class=" footer-r">
+                    <p class="title-footer">
+                        <i class="fa-solid fa-earth-americas icon-footer "></i> Thông tin liên hệ
+                    </p>
+                    <p class="a">
+                        <i class="fa-solid fa-location-dot icon-footer "></i> 371 Nguyễn Kiệm, Phường 3, Gò Vấp, Thành phố Hồ Chí Minh,Việt Nam
+                    </p>
+                    <p class="a">
+                        <i class="fa-solid fa-phone icon-footer"></i> 0367979779
+                    </p>
+                    <p class="a">
+                        <i class="fa-brands fa-linkedin icon-footer"></i>
+                        <a href="https://www.linkedin.com/company/fpt-software/?originalSubdomain=vn " class="linkedin1">Bấm vào đây</a>
+                    </p>
+                </div>
             </div>
         </section>
     </main>
@@ -313,34 +339,6 @@
         </div>
     </div>
     <!-- End introduce -->
-    <div class="footers" id="footer">
-        <div class="footer-1 border-l">
-            <p>
-                TPMusic mang lại cho người nghe những bản nhạc ý nghĩa, giúp người nghe thư giãn sau một ngày học tập mệt mỏi.TPMusic không ngừng nâng cao chất lượng và lắng nghe ý kiến từ khách hàng.Chúc các bạn có trải nghiệm tốt nhất khi sử dụng dịch vụ của chúng
-                tôi.
-            </p>
-        </div>
-        <div class=" footer-2 border-l">
-            <p>
-                <i class="fa-solid fa-earth-americas icon-footer "></i> Thông tin để liên hệ
-            </p>
-            <p>
-                <i class="fa-solid fa-location-dot icon-footer "></i> 371 Nguyễn Kiệm, Phường 3, Gò Vấp, Thành phố Hồ Chí Minh,Việt Nam
-            </p>
-            <p>
-                <i class="fa-solid fa-phone icon-footer"></i> 0367979779
-            </p>
-            <p>
-                <i class="fa-brands fa-linkedin icon-footer"></i>
-                <a href="https://www.linkedin.com/company/fpt-software/?originalSubdomain=vn " class="linkedin1">Bấm vào đây</a>
-            </p>
-        </div>
-        <div class="footer-3">
-            <p>Viết phản hồi</p>
-            <input type="text " placeholder="Nhập vào đây... ">
-            <button id="send" class="send">Gửi</button>
-        </div>
-    </div>
     <div class="modal js-modal-send  ">
         <div class="modal-body">
             <div class="modal-fly"></div>
@@ -356,6 +354,10 @@
     </div>
     </div>
     <script src="./js/index.js "></script>
+</body>
+
+</html>iv>
+<script src="./js/index.js "></script>
 </body>
 
 </html>

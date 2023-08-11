@@ -238,10 +238,11 @@ ul.header>li {
     align-items: center;
 }
 
-.focus {
+
+/* .focus {
     background-color: var(--blueviolet);
     border-left: 4px solid var(--violet);
-}
+} */
 
 ul.menu>li>a {
     text-decoration: none;
@@ -570,50 +571,6 @@ ul.menu>li>button {
     margin-top: 10px;
 }
 
-.footer-1 {
-    flex: 1.5;
-    margin: auto;
-    text-align: center;
-}
-
-.footers {
-    border-top: 2px solid var(--blueviolet);
-    display: flex;
-    position: relative;
-    color: var(--whitenew);
-    padding: 20px;
-    font-size: 20px;
-    line-height: 25px;
-}
-
-.footer-2 {
-    flex: 1;
-    margin-left: 15px;
-}
-
-.footer-2>p {
-    margin-top: 10px;
-}
-
-.footer-2 p:last-child {
-    margin-bottom: 10px;
-}
-
-.footer-3 {
-    flex: 1;
-    margin-left: 15px;
-}
-
-.border-l {
-    border-right: 2px solid var(--blueviolet);
-}
-
-.footer-3>input,
-.send {
-    margin-top: 20px;
-    font-size: 20px;
-}
-
 .icon-footer {
     font-size: 25px;
     margin-right: 10px;
@@ -631,4 +588,32 @@ ul.menu>li>button {
 
 html {
     scroll-behavior: smooth;
+}
+
+.a {
+    padding-bottom: 15px;
+    font-size: 20px;
+}
+
+.title-footer,
+.footer-l>p {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.footers {
+    display: flex;
+    color: var(--whitenew);
+}
+
+.footer-l {
+    flex: 1;
+}
+
+.footer-r {
+    flex: 2;
+}
+
+.input- {
+    font-size: 20px;
 }
