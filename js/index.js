@@ -371,13 +371,13 @@ let btn = document.getElementsByClassName(".btn")
     //     event.preventDefault();
     //     document.documentElement.classList.toggle("root1");
     // });
-document.getElementById("change-color").addEventListener('click', function(event) {
+document.getElementById("change-color").addEventListener("click", function(event) {
     event.preventDefault(); // Ngăn chặn hành vi mặc định của liên kết
     const body = document.body;
-    body.classList.toggle('dark-mode');
+    body.classList.toggle('light-mode');
 
     // Lưu trạng thái chế độ nền tối vào localStorage
-    if (body.classList.contains('dark-mode')) {
+    if (body.classList.contains('light-mode')) {
         localStorage.setItem('darkModeEnabled', 'true');
     } else {
         localStorage.removeItem('darkModeEnabled');
@@ -388,7 +388,7 @@ document.getElementById("change-color").addEventListener('click', function(event
 document.addEventListener('DOMContentLoaded', function() {
     const darkModeEnabled = localStorage.getItem('darkModeEnabled');
     if (darkModeEnabled === 'true') {
-        document.body.classList.add('dark-mode');
+        document.body.classList.add('light-mode');
     }
 });
 let intro = document.getElementById("introduce")
