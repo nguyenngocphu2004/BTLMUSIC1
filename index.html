@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 </head>
@@ -15,15 +14,13 @@
     <header>
         <div class="header flex">
             <div><img class="logo" src="./assests/img/taoanhdep_mega_logo_8619-removebg-preview.png" alt=""></div>
-            <div class="menu-icon">
-                <i class="fa-solid fa-bars-staggered"></i>
-            </div>
-            <form class="flex header search">
-                <button class="search-btn btn"><i class="fa-solid fa-magnifying-glass"></i></button>
-                <input class="search-text" type="text" placeholder="Tìm kiếm bài hát...">
+            <form id="search-form" class="flex header search">
+                <button type="button" class="search-btn btn" id="searchButton" onclick="searchSong()"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <input class="search-text" type="text" placeholder="Tìm kiếm bài hát..." id="searchInput">
+
+
             </form>
             <form class="flex header setting-user">
-                <!-- <div><button type="button" class="btn"><i class="fa-solid fa-bell"></i></button></div> -->
                 <div><button type="button" class="btn" id="setting-button"><i class="fa-solid fa-gear"></i></button>
                     <ul class="v-user v-user-setting" id="setting">
                         <li>
@@ -50,25 +47,27 @@
     <main>
         <section class="left">
             <ul class="menu">
-                <li class="flex nav" tabindex="0">
+                <li class="flex nav active-menu">
                     <button class="btn-new"><i class="fa-solid fa-music"></i></button>
-                    <a href="#aaa">Khám phá</a>
+                    <a id="kham-pha" href="./index.html">Khám phá</a>
                 </li>
-                <li class="flex nav" tabindex="0">
+                <li class="flex nav">
                     <button class="btn-new"><i class="fa-solid fa-house"></i></button>
-                    <a href="#sads">Cá nhân</a>
+                    <a id="ca-nhan" href="./personal.html">Cá nhân</a>
                 </li>
-                <li class="flex nav" tabindex="0">
+                <li class="flex nav">
                     <button class="btn-new"><i class="fa-solid fa-chart-simple"></i></button>
-                    <a href="#aaaa">Bảng xếp hạng</a>
+                    <a id="bang-xep-hang" href="#">Bảng xếp hạng</a>
                 </li>
-                <li class="flex nav" tabindex="0">
+                <li class="flex nav">
                     <button class="btn-new"><i class="fa-solid fa-barcode"></i></button>
-                    <a href="#aaaaaaa">Thể loại</a>
+                    <a id="the-loai" href="#aaaaaaa">Thể loại</a>
                 </li>
             </ul>
         </section>
         <section class="right">
+            <div class="search-results">
+            </div>
             <div class="slider">
                 <div class="item">
                     <img src="./assests/img/RapViet2020.jpeg" alt="">
@@ -91,25 +90,51 @@
                 <button class="" id="next">></button>
                 <button class="" id="prev"><</button>
             </div>
+            <div style="display: none;" class="personal">
+                <div class="profile">
+                    <img src="./assests/img/Artists/05-artist.jpg" alt="">
+                    <h2>PERSONAL</h2>
+                </div>
+                <div class="music-personal">
+                    <ul>
+                        <li>
+                            <h2>Bài hát</h2>
+                        </li>
+                    </ul>
+                    <div class="playlist">
+                        <div class="song">
+                            <div class="thumb" style="background-image: url('https://i.ytimg.com/vi/jTLhQf5KJSc/maxresdefault.jpg')">
+                            </div>
+                            <div class="body">
+                                <h3 class="title">Music name</h3>
+                                <p class="author">Singer</p>
+                            </div>
+                            <div class="option">
+                                <i class="fas fa-ellipsis-h"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="container">
                 <ul class="flex header header-container">
                     <li>
                         <h2>Bài hát nổi bật</h2>
                     </li>
                     <li>
-                        <div><a href="#">TẤT CẢ &rarr;</a></div>
+                        <div><a href="./featured.html">TẤT CẢ &rarr;</a></div>
                     </li>
                 </ul>
                 <ul class="flex v-container" id="featured">
                     <li>
-                        <div>
+                        <div class="featured" data-song="Nơi ta sống">
                             <div>
-                                <a href="">
+                                <a>
                                     <img src="./assests/img/Artists/01-artist.jpg" alt="">
                                     <i class="fa-solid fa-play"></i>
                                 </a>
                             </div>
-                            <a href="">Test</a>
+                            <a>Nơi ta sống</a>
                         </div>
                     </li>
                 </ul>
@@ -318,7 +343,6 @@
         </div>
     </div>
     </div>
-    <!-- End Form -->
     <!-- Gioi thieu -->
     <div class="modal js-modal-intro ">
         <div class="modal-body">
@@ -352,12 +376,60 @@
             </div>
         </div>
     </div>
+    <!-- Control Music -->
+    <div class="player">
+        <!-- Dashboard -->
+        <div class="dashboard">
+            <div class="cd">
+                <div class="cd-thumb">
+                    <div style="background-image: url(./assests/img/Artists/02-artist.jpg);" class="music-image"></div>
+                    <div class="title-song">
+                        <h3>Now playing:</h3>
+                        <h4>String 57th & 9th</h4>
+                    </div>
+                </div>
+            </div>
+            <!-- Control -->
+            <div class="control">
+                <div>
+                    <div class="btn-active btn-new btn-repeat">
+                        <i class="fas fa-redo"></i>
+                    </div>
+                    <div class="btn-new btn-prev">
+                        <i class="fas fa-step-backward"></i>
+                    </div>
+                    <div class="btn-new btn-toggle-play">
+                        <i class="fas fa-pause icon-pause"></i>
+                        <i class="fas fa-play icon-play"></i>
+                    </div>
+                    <div class="btn-new btn-next">
+                        <i class="fas fa-step-forward"></i>
+                    </div>
+                    <div class="btn-active btn-new btn-random">
+                        <i class="fas fa-random"></i>
+                    </div>
+                </div>
+                <div>
+                    <div class="start-time">00:00</div>
+                    <input id="progress" class="progress" type="range" value="0" step="1" min="0" max="100">
+                    <div class="start-end">04:12</div>
+                </div>
+            </div>
+            <div>
+                <div class="btn-new btn-random">
+                    <i class="fas fa-volume-high icon-max"></i>
+                    <i class="fas fa-volume-xmark icon-min"></i>
+                </div>
+                <div class="volume-control">
+                    <input id="volume" class="volume" type="range" value="100" step="1" min="0" max="100">
+                </div>
+            </div>
+            <audio id="audio" src=""></audio>
+        </div>
     </div>
-    <script src="./js/index.js "></script>
-</body>
-
-</html>iv>
-<script src="./js/index.js "></script>
+    <!-- End Form -->
+    <script src="./js/music.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 
 </html>

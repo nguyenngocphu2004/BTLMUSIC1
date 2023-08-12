@@ -1,0 +1,13 @@
+.light-mode {
+    background-color: #ffffff;
+    /* Màu nền sáng */
+    color: #000000;
+    /* Màu chữ sáng */
+}
+
+.dark-mode {
+    background-color: #242526;
+    /* Màu nền tối */
+    color: #ffffff;
+    /* Màu chữ tối */
+}

@@ -9,26 +9,59 @@ let active = 0;
 
 
 
+
+document.addEventListener("DOMContentLoaded", function() {
+    let menuItems = document.querySelectorAll(".menu li");
+
+    // Lặp qua từng phần tử li và thêm trình lắng nghe sự kiện click
+    menuItems.forEach((li) => {
+        li.addEventListener("click", function() {
+            // Lấy giá trị thuộc tính href của thẻ a tương ứng
+            const href = li.querySelector("a").getAttribute("href");
+            // Điều hướng đến vị trí mới
+            window.location.href = href;
+        });
+    });
+});
+
+
+
+
 function loadFeatureds() {
     fetch("assests/data/featureds.json").then(res => res.json()).then(data => {
         let featuredsList = document.getElementById("featured");
         let featuredsHtml = "";
         for (let featured of data) {
             featuredsHtml += `
-          <li>
+        <li>
+        <div class="featured" data-song="${featured.name}">
             <div>
-              <div>
-                <a href="">
-                  <img src="${featured.image}" alt="">
-                  <i class="fa-solid fa-play"></i>
+                <a>
+                    <img src="${featured.image}" alt="">
+                    <i class="fa-solid fa-play"></i>
                 </a>    
-              </div>
-              <a href="">${featured.name}</a>
             </div>
-          </li>
+            <a>${featured.name}</a>
+        </div>
+    </li>
         `;
         }
         featuredsList.innerHTML = featuredsHtml;
+        const featuredItems = document.querySelectorAll(".featured");
+        featuredItems.forEach((item) => {
+            item.addEventListener("click", () => {
+                const songName = item.getAttribute("data-song");
+                const songIndex = app.songs.findIndex((song) => song.name === songName);
+
+                if (songIndex !== -1) {
+                    app.currentIndex = songIndex;
+                    app.loadCurrentSong();
+                    app.render();
+                    audio.play();
+                    app.scrollToActiveSong();
+                }
+            });
+        });
     })
 }
 
@@ -143,6 +176,7 @@ function loadShow() {
 
 
 
+
 window.onload = function() {
     loadFeatureds();
     loadArtists();
@@ -178,18 +212,7 @@ window.onload = function() {
     //   autoSlideTimer = setInterval(autoSlideShow, autoSlideInterval);
     // });
 
-
-    /* Focus */
-    let menuFocus = document.querySelectorAll(".menu li, .menu a, .menu button");
-    menuFocus.forEach((e) => {
-        e.addEventListener("click", (event) => {
-            menuFocus.forEach((el) => el.classList.remove("focus"));
-            e.classList.add("focus");
-        });
-    });
-    /* End focus */
-    /* Thay doi mau nen*/
-}
+};
 
 
 /* Form */
@@ -344,9 +367,29 @@ function dangnhap() {
 }
 // Change - color
 let btn = document.getElementsByClassName(".btn")
-document.getElementById("change-color").addEventListener("click", function(event) {
-    event.preventDefault();
-    document.documentElement.classList.toggle("root1");
+    // document.getElementById("change-color").addEventListener("click", function(event) {
+    //     event.preventDefault();
+    //     document.documentElement.classList.toggle("root1");
+    // });
+document.getElementById("change-color").addEventListener('click', function(event) {
+    event.preventDefault(); // Ngăn chặn hành vi mặc định của liên kết
+    const body = document.body;
+    body.classList.toggle('dark-mode');
+
+    // Lưu trạng thái chế độ nền tối vào localStorage
+    if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('darkModeEnabled', 'true');
+    } else {
+        localStorage.removeItem('darkModeEnabled');
+    }
+});
+
+// Kiểm tra trạng thái chế độ nền tối đã được lưu trong localStorage
+document.addEventListener('DOMContentLoaded', function() {
+    const darkModeEnabled = localStorage.getItem('darkModeEnabled');
+    if (darkModeEnabled === 'true') {
+        document.body.classList.add('dark-mode');
+    }
 });
 let intro = document.getElementById("introduce")
 let modal_intro = document.querySelector(".js-modal-intro")

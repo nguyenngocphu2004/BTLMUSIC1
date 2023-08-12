@@ -1,7 +1,7 @@
 :root {
     --blackblue: #0c031a;
-    --white: #ffffff;
-    --whitenew: #d5cece;
+    --whitenew: #ffffff;
+    --white: #d5cece;
     --blueviolet: #2a144d;
     --violet: #4f327c;
 }
@@ -23,6 +23,7 @@
 
 body {
     background-color: var(--blackblue);
+    margin-bottom: 85.4px;
 }
 
 .flex {
@@ -125,16 +126,16 @@ main {
     box-shadow: 0px 3px 8px var(--violet);
 }
 
-.search:hover .search-text {
+
+/* ko hover */
+
+.search .search-text {
     width: 30rem;
 }
 
 .btn>i {
     background-color: transparent;
 }
-
-
-/* End Search */
 
 
 /*Start setting user */
@@ -176,7 +177,7 @@ ul.v-user-setting:after {
     right: 50%;
 }
 
-.v-user>li {
+ul.v-user>li {
     list-style-type: none;
     border-bottom: 1px solid var(--blackblue);
     background: transparent;
@@ -203,25 +204,19 @@ ul.v-user>li:last-child>a {
     border-radius: 0 0 0.8rem 0.8rem;
 }
 
-
-/* End setting user */
-
 ul.header>li {
     list-style-type: none;
 }
 
 
-/* End Header */
-
-
-/* Start Main */
+/* Main */
 
 .right {
     margin: 0 3rem;
 }
 
 
-/* Start nav*/
+/* Nav*/
 
 .left {
     width: 15%;
@@ -231,18 +226,21 @@ ul.header>li {
 .btn-new {
     border: none;
     cursor: pointer;
-    background-color: var(--blackblue);
+    background-color: transparent;
 }
 
 .nav {
     align-items: center;
 }
 
+ul.menu>li:focus {
+    background-color: #0c031a;
+}
 
-/* .focus {
+.active-menu {
     background-color: var(--blueviolet);
-    border-left: 4px solid var(--violet);
-} */
+    border-left: 3px solid var(--violet);
+}
 
 ul.menu>li>a {
     text-decoration: none;
@@ -258,7 +256,7 @@ ul.menu>li>button {
 }
 
 
-/* End Main */
+/* Slider */
 
 .slider {
     position: relative;
@@ -342,19 +340,19 @@ ul.menu>li>button {
     animation: leftToRight 1s forwards;
 }
 
-.container>ul.v-container {
+ul.v-container {
     flex-wrap: wrap;
 }
 
-.container>ul.v-container>li {
+ul.v-container>li {
     width: 20%;
 }
 
-.container>ul.v-container>li>div {
+ul.v-container>li>div {
     padding: 1rem;
 }
 
-.container>ul.v-container>li>div>div {
+ul.v-container>li>div>div {
     position: relative;
     overflow: hidden;
     border-radius: 1rem;
@@ -363,12 +361,12 @@ ul.menu>li>button {
     padding-bottom: 100%;
 }
 
-.container>ul.v-container>li>div>div>a>img {
+ul.v-container>li>div>div>a>img {
     width: 100%;
     transition: opacity 0.5s;
 }
 
-.container>ul.v-container>li>div>div>a>i {
+ul.v-container>li>div>div>a>i {
     border: 1px solid var(--whitenew);
     padding: 0.7rem;
     border-radius: 50%;
@@ -380,18 +378,136 @@ ul.menu>li>button {
     color: var(--whitenew);
 }
 
-.container>ul.v-container>li>div>div:hover>a>i {
+ul.v-container>li>div>div:hover>a>i {
     display: block;
 }
 
-.container>ul.v-container>li>div>div:hover>a>img {
+ul.v-container>li>div>div:hover>a>img {
     transform: scale(1.3);
     transition: transform 1s;
     opacity: 0.6;
 }
 
 
-/* End artists */
+/* Persional */
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem;
+    position: relative;
+}
+
+.profile::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--whitenew);
+}
+
+@keyframes rotateImg {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.profile>img {
+    width: 10%;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    animation: rotateImg 7s infinite linear;
+}
+
+.profile>h2 {
+    color: var(--white);
+}
+
+.music-personal {
+    margin-bottom: 3rem;
+}
+
+.music-personal>ul {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+}
+
+.music-personal>ul>li>button {
+    background-color: var(--violet);
+    padding: 0.5rem;
+    border-radius: 1rem;
+    color: var(--white);
+}
+
+.music-personal>ul>li>button:hover {
+    color: var(--whitenew);
+}
+
+.personal>div>ul>li {
+    color: var(--white);
+    list-style-type: none;
+}
+
+li.playing {
+    background-color: var(--blueviolet);
+}
+
+.playlist>div {
+    color: var(--white);
+}
+
+.search-results {
+    color: var(--white);
+}
+
+.song {
+    padding: 0.5rem;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    align-items: center;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.body {
+    display: flex;
+    width: 90%;
+}
+
+.title {
+    width: 40%;
+}
+
+.author {
+    display: flex;
+    align-items: center;
+}
+
+.thumb {
+    padding-top: 5%;
+    width: 5%;
+    border-radius: 50%;
+    background-color: #333;
+    background-size: cover;
+}
+
+.song.active {
+    background-color: var(--blueviolet);
+}
+
+.song:active {
+    opacity: 1;
+}
 
 
 /* Star Form */
@@ -551,6 +667,136 @@ ul.menu>li>button {
 /* End form */
 
 
+/* Control Music */
+
+.player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--blueviolet);
+    color: var(--white);
+}
+
+.dashboard {
+    display: flex;
+}
+
+.dashboard>div:first-child {
+    width: 30%;
+    overflow: hidden;
+}
+
+.dashboard>div:nth-child(2) {
+    width: 40%;
+}
+
+.dashboard>div:nth-child(3) {
+    width: 30%;
+}
+
+.dashboard>div>div>img {
+    height: 82px;
+    border-radius: 50%;
+    margin-left: 1rem;
+    animation: rotateImg 7s infinite linear;
+    margin-right: 1rem;
+}
+
+.dashboard>div {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+}
+
+.cd-thumb {
+    display: flex;
+    align-items: center;
+}
+
+.control {
+    flex-direction: column;
+}
+
+.control>div:first-child {
+    display: flex;
+}
+
+.control>div:last-child {
+    width: 70%;
+}
+
+.control>div:first-child>div {
+    padding: 1rem;
+}
+
+.control>div:last-child>input {
+    width: 100%;
+    height: 3px;
+    cursor: pointer;
+}
+
+.player .icon-pause,
+.icon-icon-min {
+    display: none;
+}
+
+.player.playing .icon-pause,
+.icon-icon-min {
+    display: inline-block;
+}
+
+.player.playing .icon-play,
+.icon-max {
+    display: none;
+}
+
+.dashboard>div:nth-child(3) {
+    padding-left: 10%;
+}
+
+.dashboard>div>div {
+    display: flex;
+    align-items: center;
+}
+
+.dashboard>div>div>input {
+    margin: 1rem;
+    width: 100%;
+    height: 3px;
+    cursor: pointer;
+}
+
+.control .btn-active.active {
+    color: var(--violet);
+}
+
+.cd-thumb {
+    width: 100%;
+}
+
+.music-image {
+    margin: 0 1rem;
+    padding-top: 20%;
+    width: 20%;
+    border-radius: 50%;
+    background-size: cover;
+    animation: rotateImg 7s infinite linear;
+}
+
+.title-song>h4 {
+    font-weight: normal;
+}
+
+.featured-html {
+    margin-top: 7rem;
+}
+
+.featured-html .container {
+    height: auto;
+}
+
+
 /* Gioi thieu */
 
 .logo-introduce {
@@ -616,4 +862,24 @@ html {
 
 .input- {
     font-size: 20px;
+}
+
+.search-info {
+    padding: 1rem 0;
+}
+
+.light-mode {
+    --blackblue: #0c031a;
+    --whitenew: #ffffff;
+    --white: #d5cece;
+    --blueviolet: #2a144d;
+    --violet: #4f327c;
+}
+
+.dark-mode {
+    --blackblue: #fff;
+    --white: black;
+    --whitenew: #1f1d1d;
+    --blueviolet: #dccaca;
+    --violet: #9e8e8e;
 }
